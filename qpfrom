@@ -20,7 +20,7 @@ def main():
     istream = GMime.StreamPipe.new(sys.stdin.fileno())
     parser = GMime.Parser.new_with_stream(istream)
     msg = parser.construct_message()
-    constr_7bit = getattr(GMime.EncodingConstraint, '7BIT');  # eww, FIXME
+    constr_7bit = getattr(GMime.EncodingConstraint, '7BIT')  # eww, FIXME
     msg.encode(constr_7bit)  # FIXME:
     # * On one hand, this is too much: it QP-encodes even the parts that
     #   don't contain "From " lines.
