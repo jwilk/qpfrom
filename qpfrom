@@ -24,7 +24,7 @@ def main():
     msg.encode(constr_7bit)  # FIXME:
     # * On one hand, this is too much: it QP-encodes even the parts that
     #   don't contain "From " lines.
-    # * On the other hand, it is too litte: GMime might decide not to QP-encode
+    # * On the other hand, it is too little: GMime might decide not to QP-encode
     #   parts that are already ASCII-only.
     ostream = GMime.StreamPipe.new(sys.stdout.fileno())
     ostream = GMime.StreamFilter.new(ostream)
