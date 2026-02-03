@@ -14,6 +14,7 @@ GMime.init()
 
 def main():
     ap = argparse.ArgumentParser(usage='%(prog)s < FILE')
+    ap.color = False
     ap.parse_args()
     if sys.stdin.isatty():
         ap.error('stdin is a tty')
